@@ -7,9 +7,7 @@ $username = "test";
 $password = "12345"; 
 $client_id = "phpMQTT-web";
 
-function procmsg($topic, $msg){
-  echo "Msg Recieved: $msg\n";
-}
+
     
 $mqtt = new Bluerhinos\phpMQTT('m12.cloudmqtt.com', '19053', $client_id);
 if ($mqtt->connect(true, NULL, $username, $password)) {
@@ -23,4 +21,7 @@ if ($mqtt->connect(true, NULL, $username, $password)) {
   $mqtt->close();
 } else {
   exit(1);
+}
+function procmsg($topic, $msg){
+  echo "Msg Recieved: $msg\n";
 }
