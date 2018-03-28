@@ -6,7 +6,7 @@ $port = 19053;                     // change if necessary
 $username = "test";                   // set your username
 $password = "12345";                   // set your password
 $client_id = "phpMQTT-subscriberweb"; // make sure this is unique for connecting to sever - you could use uniqid()
-$mqtt = new phpMQTT($server, $port, $client_id);
+$mqtt = new Bluerhinos\phpMQTT($server, $port, $client_id);
 if(!$mqtt->connect(true, NULL, $username, $password)) {
 	exit(1);
 }
