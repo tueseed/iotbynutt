@@ -11,7 +11,7 @@ function procmsg($topic, $msg){
   echo "Msg Recieved: $msg\n";
 }
     
-$mqtt = new phpMQTT('m12.cloudmqtt.com', '19053', $client_id);
+$mqtt = new Bluerhinos\phpMQTT('m12.cloudmqtt.com', '19053', $client_id);
 if ($mqtt->connect(true, NULL, $username, $password)) {
 	
   $topics[$topic] = array(
