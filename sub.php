@@ -10,7 +10,7 @@ $mqtt = new Bluerhinos\phpMQTT($server, $port, $client_id);
 if(!$mqtt->connect(true, NULL, $username, $password)) {
 	exit(1);
 }
-$topics['/ESP/LED'] = array("qos" => 0, "function" => "procmsg");
+$topics["/ESP/LED"] = array("qos" => 0, "function" => "procmsg");
 $mqtt->subscribe($topics, 0);
 while($mqtt->proc()){
 		
