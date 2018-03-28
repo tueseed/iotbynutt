@@ -1,27 +1,23 @@
 <?php
 require_once('phpMQTT.php');
 
-$url = parse_url(getenv('m12.cloudmqtt.com'));
-$topic = '/ESP/LED';
-$username = "test";                   
-$password = "12345"; 
-$client_id = "phpMQTT-web";
+$server = "m12.cloudmqtt.com";     // change if necessary
+$port = 19053;                     // change if necessary
+$username = "test";                   // set your username
+$password = "12345";                   // set your password
+$client_id = "phpMQTT-subscriberweb"; // make sure this is unique for connecting to sever - you could use uniqid()
+$mqtt = new phpMQTT($server, $port, $client_id);
 if(!$mqtt->connect(true, NULL, $username, $password)) {
 	exit(1);
 }
-
-    
-$mqtt = new Bluerhinos\phpMQTT('m12.cloudmqtt.com', '19053', $client_id);
-$topics[$topic] = array("qos" => 0, "function" => "procmsg");
+$topics['/ESP/LED'] = array("qos" => 0, "function" => "procmsg");
 $mqtt->subscribe($topics, 0);
 while($mqtt->proc()){
 		
 }
 $mqtt->close();
-
-
-
-
 function procmsg($topic, $msg){
-  echo "Msg Recieved: $msg\n";
+		echo "Msg Recieved: " . date("r") . "\n";
+		echo "Topic: {$topic}\n\n";
+		echo "\t$msg\n\n";
 }
