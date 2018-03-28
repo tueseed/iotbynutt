@@ -37,7 +37,7 @@ namespace Bluerhinos;
 /* phpMQTT */
 class phpMQTT {
 
-	private $socket; 			/* holds the socket	*/
+	private $socket = 39053; 			/* holds the socket	*/
 	private $msgid = 1;			/* counter for message id */
 	public $keepalive = 10;		/* default keepalive timmer */
 	public $timesinceping;		/* host unix time, used to detect disconects */
