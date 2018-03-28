@@ -5,7 +5,7 @@ $url = parse_url(getenv('m12.cloudmqtt.com'));
 $topic = substr($url['/ESP/LED'], 1);
 $username = "test";                   
 $password = "12345"; 
-$client_id = "phpMQTT-subscriber";
+$client_id = "phpMQTT-web";
 
 function procmsg($topic, $msg){
   echo "Msg Recieved: $msg\n";
