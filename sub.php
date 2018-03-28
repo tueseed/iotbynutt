@@ -14,7 +14,7 @@ function procmsg($topic, $msg){
 $mqtt = new Bluerhinos\phpMQTT('m12.cloudmqtt.com', '19053', $client_id);
 if ($mqtt->connect(true, NULL, $username, $password)) {
 	
-  $topics[$topic] = array(
+  $topics['$topic'] = array(
       "qos" => 0,
       "function" => "procmsg"
   );
