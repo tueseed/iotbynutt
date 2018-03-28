@@ -1,19 +1,14 @@
 <?php
-require_once('phpMQTT.php');
-
-//$url = parse_url(getenv('m12.cloudmqtt.com'));
-$topic =  '/ESP/LED';
-$username = "test";                   
-$password = "12345"; 
-$client_id = "phpMQTT-web";
-
+require('vendor/autoload.php');
+$url = parse_url(getenv('CLOUDMQTT_URL'));
+$topic = substr($url['path'], 1);
+$client_id = "phpMQTT-subscriber";
 function procmsg($topic, $msg){
   echo "Msg Recieved: $msg\n";
 }
     
-$mqtt = new Bluerhinos\phpMQTT('m12.cloudmqtt.com', '19053', $client_id);
-if ($mqtt->connect(true, NULL, $username, $password)) {
-	
+$mqtt = new Bluerhinos\phpMQTT($url['host'], $url['port'], $client_id);
+if ($mqtt->connect(true, NULL, $url['user'], $url['pass'])) {
   $topics[$topic] = array(
       "qos" => 0,
       "function" => "procmsg"
