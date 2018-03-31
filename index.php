@@ -25,7 +25,7 @@ function send_line_notify($message, $token)
   return $result;
 }
 
-$message = $KEY1 ;
+$message = "ทดลองส่งข้อมูลจาก Arduino By tueseed" ;
 $token = '6N01ZWf8QAxDnzyW7GMBk8pL8Xf1re9tSX6sZp6fNKJ';
 
 echo send_line_notify($message, $token);
