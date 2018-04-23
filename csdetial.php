@@ -11,7 +11,7 @@
 <?php
 $pea_no = $_GET['pea_no'];
 require('./connect-db.php');
-$sql_search = "SELECT * FROM tbl_cs WHERE (pea_no LIKE '%".$keyword."%')";
+$sql_search = "SELECT * FROM tbl_cs WHERE (pea_no LIKE '%".$pea_no."%')";
 $result = mysqli_query($conn,$sql_search);
 ?>
 <body> 
