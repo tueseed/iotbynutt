@@ -1,8 +1,8 @@
 <!DOCTYPE html> 
 <html>
 <head>
-<meta charset="utf-8">
-<title>jQuery Mobile Web App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0," data-ajax="false" charset="utf-8">
+<title>ค้นหาข้อมูลผู้ใช้ไฟฟ้า</title>
 <link href="jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css"/>
 <link href="jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css"/>
 <script src="jquery-1.6.4.min.js" type="text/javascript"></script>
@@ -11,7 +11,7 @@
 <?php
 $pea_no = $_GET['pea_no'];
 require('./connect-db.php');
-$sql_search = "SELECT * FROM tbl_cs WHERE (cs_name LIKE '%".$keyword."%')";
+$sql_search = "SELECT * FROM tbl_cs WHERE (pea_no LIKE '%".$keyword."%')";
 $result = mysqli_query($conn,$sql_search);
 ?>
 <body> 
@@ -22,7 +22,12 @@ $result = mysqli_query($conn,$sql_search);
 	</div>
 	<div data-role="content">	
 			<?php
-            echo $pea_no;
+			$objectresult = mysqli_fetch_array($result);
+            echo $objectresult["cs_name"]."<br>";
+			echo $objectresult["address"]."<br>";
+			echo "ca :".$objectresult["ca"]."<br>";
+			echo "pea no.:".$objectresult["pea_no"]."<br>";
+			echo "<a href='https://www.google.co.th/maps/search/".$objectresult["lat"].",".$objectresult["long"]."'>พิกัด Google map</a></h5><br>";
 			?>
 	</div>
 	<div data-role="footer">

@@ -1,7 +1,8 @@
 <!DOCTYPE html> 
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0," data-ajax="false" charset="utf-8"><title>ค้นหาข้อมูลผู้ใช้ไฟฟ้า</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0," data-ajax="false" charset="utf-8">
+<title>ค้นหาข้อมูลผู้ใช้ไฟฟ้า</title>
 <link href="jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css"/>
 <link href="jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css"/>
 <script src="jquery-1.6.4.min.js" type="text/javascript"></script>
@@ -12,7 +13,7 @@
 $keyword = $_POST['keyword'];
 require('./connect-db.php');
 if($keyword){
-$sql_search = "SELECT * FROM tbl_cs WHERE (cs_name LIKE '%".$keyword."%')";
+$sql_search = "SELECT * FROM tbl_cs WHERE (cs_name LIKE '%".$keyword."%') OR (pea_no LIKE '%".$keyword."%') OR (ca LIKE '%".$keyword."%')";
 $result = mysqli_query($conn,$sql_search);
 }
 
