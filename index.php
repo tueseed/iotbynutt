@@ -20,7 +20,7 @@ $result = mysqli_query($conn,$sql_search);
 ?>
 <div data-role="page" id="page">
 	<div data-role="header">
-		<h1>ข้อมูลผู้ใช้ไฟฟ้า กฟอ.โพธาราม</h1>
+		<h1>PTM CS DATA</h1>
 	</div>
     <div data-role="content">
       <form action="index.php" method="post">

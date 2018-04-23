@@ -29,7 +29,9 @@ $result = mysqli_query($conn,$sql_search);
 			echo "pea no.:".$objectresult["pea_no"]."<br>";
 			echo "<a href='https://www.google.co.th/maps/search/".$objectresult["lat"].",".$objectresult["long"]."'>พิกัด Google map</a></h5><br>";
 			?>
+            <h2><a href="#" class="ui-btn" data-rel="back">กลับหน้าค้นหา</a></h2>
 	</div>
+   
 	<div data-role="footer">
 		<h4>Dev By Nutthapong</h4>
 	</div>
