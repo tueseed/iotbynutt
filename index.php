@@ -10,16 +10,11 @@
 </head> 
 <body> 
 <?php
-$serverName = "raiingphu.com";
-$userName = "raiingph_psq";
-$userPassword = "12345678";
-$dbName = "raiingph_psq";
-$conn = mysqli_connect($serverName,$userName,$userPassword,$dbName);
-//mysqli_set_charset($conn,"utf8");
+
 $keyword = $_POST['keyword'];
 $route_check = substr($keyword,0,4);
 $route_S_up = strtoupper($route_check);
-//require('./connect-db.php');
+require('./connect-db.php');
 if($keyword){
 			if($route_S_up == "JPTM"){
 										$route_search = substr($keyword,0,7);
@@ -49,7 +44,7 @@ $result = mysqli_query($conn,$sql_search);
 	<div data-role="content">	
 		<ul data-role="listview">
 			<?php
-			if($conn){echo "sacjkasncklanclkxanv";}
+			
 				while($objectresult = mysqli_fetch_array($result))
 				{
 					//echo "<li>".$objectresult["cs_name"]."</li>";
