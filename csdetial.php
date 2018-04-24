@@ -27,8 +27,8 @@ $result = mysqli_query($conn,$sql_search);
 			echo $objectresult["address"]."<br>";
 			echo "ca :".$objectresult["ca"]."<br>";
 			echo "pea no.:".$objectresult["pea_no"]."<br>";
-			echo "สายการจำหน่วย :".$objectresult["route"];
-			echo "เลข 6 หลัก :".$objectresult["sixdigit"];
+			echo "สายการจำหน่วย :".$objectresult["route"]."<br>";
+			echo "เลข 6 หลัก :".$objectresult["sixdigit"]."<br>";
 			echo "<a href='https://www.google.co.th/maps/search/".$objectresult["lat"].",".$objectresult["long"]."'>พิกัด Google map</a></h5><br>";
 			?>
             <h2><a href="#" class="ui-btn" data-rel="back">กลับหน้าค้นหา</a></h2>
