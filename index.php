@@ -11,16 +11,26 @@
 <body> 
 <?php
 $keyword = $_POST['keyword'];
+$route_check = substr($keyword,0,4);
+$route_S_up = strtoupper($route_check);
 require('./connect-db.php');
 if($keyword){
-$sql_search = "SELECT * FROM tbl_cs WHERE (cs_name LIKE '%".$keyword."%') OR (pea_no LIKE '%".$keyword."%') OR (ca LIKE '%".$keyword."%')";
+			if($route_S_up == "JPTM"){
+										$route_search = substr($keyword,0,7);
+										$six_pole = substr($keyword,8,13);
+										$sql = "SELECT * FROM meter WHERE route LIKE '%".$route_search."%' AND sixdigit LIKE '%".$six_pole."%'";
+				
+										}
+			else{
+							$sql_search = "SELECT * FROM tbl_cs WHERE (cs_name LIKE '%".$keyword."%') OR (pea_no LIKE '%".$keyword."%') OR (ca LIKE '%".$keyword."%')";
+				}
 $result = mysqli_query($conn,$sql_search);
 }
 
 ?>
 <div data-role="page" id="page">
 	<div data-role="header">
-		<h1>PTR Customer Data</h1>
+		<h1>PTM CS DATA</h1>
 	</div>
     <div data-role="content">
       <form action="index.php" method="post">
