@@ -15,7 +15,7 @@ $userName = "raiingph_psq";
 $userPassword = "12345678";
 $dbName = "raiingph_psq";
 $conn = mysqli_connect($serverName,$userName,$userPassword,$dbName);
-mysqli_set_charset($conn,"utf8");
+//mysqli_set_charset($conn,"utf8");
 $keyword = $_POST['keyword'];
 $route_check = substr($keyword,0,4);
 $route_S_up = strtoupper($route_check);
