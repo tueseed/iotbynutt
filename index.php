@@ -34,7 +34,7 @@ $result = mysqli_query($conn,$sql_search);
 	</div>
     <div data-role="content">
       <form action="index.php" method="post">
-        <label for="textinput">	คำค้นหา(ชื่อ,Pea.,ca):</label>
+        <label for="textinput">	คำค้นหา(ชื่อ,Pea.,ca,สายการจดหน่วย+เลข6หลัก):</label>
         <input type="text" name="keyword" id="keyword" value=""  />
         <input type="submit" value="ค้นหา" data-icon="search" />
       	</form>
