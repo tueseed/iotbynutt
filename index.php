@@ -49,6 +49,7 @@ $result = mysqli_query($conn,$sql_search);
 	<div data-role="content">	
 		<ul data-role="listview">
 			<?php
+			if($conn){echo "sacjkasncklanclkxanv";}
 				while($objectresult = mysqli_fetch_array($result))
 				{
 					//echo "<li>".$objectresult["cs_name"]."</li>";
