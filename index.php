@@ -18,7 +18,7 @@ if($keyword){
 			if($route_S_up == "JPTM"){
 										$route_search = substr($keyword,0,7);
 										$six_pole = substr($keyword,8,13);
-										$sql = "SELECT * FROM meter WHERE route LIKE '%".$route_search."%' AND sixdigit LIKE '%".$six_pole."%'";
+										$sql = "SELECT * FROM tbl_cs WHERE route LIKE '%".$route_search."%' AND sixdigit LIKE '%".$six_pole."%'";
 				
 										}
 			else{
