@@ -20,7 +20,7 @@ $result = mysqli_query($conn,$sql_search);
 ?>
 <div data-role="page" id="page">
 	<div data-role="header">
-		<h1>PTM CS DATA</h1>
+		<h1>PTR Customer Data</h1>
 	</div>
     <div data-role="content">
       <form action="index.php" method="post">
