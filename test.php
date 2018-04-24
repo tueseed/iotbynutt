@@ -17,7 +17,7 @@ $sql = "SELECT * FROM tbl_cs";
 $result = mysqli_query($conn,$sql);
 while($objectresult = mysqli_fetch_array($result)){
 	
-	echo $objectresult[1];
+	echo $objectresult["cs_name"];
 	
 	
 	
