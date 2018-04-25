@@ -15,7 +15,7 @@ $keyword = $_POST['keyword'];
 $office = $_POST['office'];
 $route_check = substr($keyword,0,4);
 $route_S_up = strtoupper($route_check);
-require('./connect-db.php');
+//require('./connect-db.php');
 if($office == "PTM"){
 	require('./connect-db.php');
 	if($keyword){
