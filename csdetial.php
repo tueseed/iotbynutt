@@ -10,7 +10,13 @@
 </head> 
 <?php
 $pea_no = $_GET['pea_no'];
+$office = $_GET['office'];
+if($office == "JPTM"){
 require('./connect-db.php');
+}
+if($office == "JNKW"){
+require('./connect-db-nkw.php');
+	}
 $sql_search = "SELECT * FROM tbl_cs WHERE (pea_no LIKE '%".$pea_no."%')";
 $result = mysqli_query($conn,$sql_search);
 ?>
