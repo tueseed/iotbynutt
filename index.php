@@ -42,7 +42,7 @@ if($office == "NKW")
 				
 										}
 			else{
-							$sql_search = "SELECT * FROM tbl_cs WHERE cs_name LIKE '%".$keyword."%'";
+							$sql_search = "SELECT * FROM tbl_cs WHERE cs_name LIKE '%".$keyword."%' OR pea_no LIKE '%".$keyword."%'";
 				}
 $result = mysqli_query($conn,$sql_search);
 }
