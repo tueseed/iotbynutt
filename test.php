@@ -9,7 +9,7 @@
 <?php
 require('./connect-db-nkw.php');
 $sql_search = "SELECT * FROM tbl_cs";
-
+$result = mysqli_query($conn,$sql_search);
 
 
 		 ?>
