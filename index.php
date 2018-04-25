@@ -76,7 +76,7 @@ $result = mysqli_query($conn,$sql_search);
 				while($objectresult = mysqli_fetch_array($result))
 				{
 					//echo "<li>".$objectresult["cs_name"]."</li>";
-					echo "<li><a href='csdetial.php?pea_no=".$objectresult["pea_no"]."'>".$objectresult["cs_name"]."</a></li>";
+					echo "<li><a href='csdetial.php?pea_no=".$objectresult["pea_no"]."&office=".$objectresult["office"]."'>".$objectresult["cs_name"]."</a></li>";
 					
 					}			
 			
