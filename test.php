@@ -8,7 +8,7 @@
 <body>
 <?php
 require('./connect-db-nkw.php');
-
+$sql_search = "SELECT * FROM tbl_cs";
 
 
 
