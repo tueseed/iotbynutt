@@ -12,11 +12,21 @@
 <?php
 
 $keyword = $_POST['keyword'];
+$office = $_POST['office'];
 $route_check = substr($keyword,0,4);
 $route_S_up = strtoupper($route_check);
 require('./connect-db.php');
+if($office == "PTM"){
+	require('./connect-db.php');	
+	}
+else if($office == "NKW")
+{
+	require('./connect-db-nkw.php');
+	
+	
+	}
 if($keyword){
-			if($route_S_up == "JPTM"){
+			if($route_S_up == "JPTM" OR $route_S_up == "JNKW"){
 										$route_search = substr($keyword,0,7);
 										$six_pole = substr($keyword,8,13);
 										$sql_search = "SELECT * FROM tbl_cs WHERE route LIKE '%".$route_search."%' AND sixdigit LIKE '%".$six_pole."%'";
@@ -35,6 +45,12 @@ $result = mysqli_query($conn,$sql_search);
 	</div>
     <div data-role="content">
       <form action="index.php" method="post">
+      	  <label for="selectmenu" class="select">Options:</label>
+          <select name="office" id="office">
+            <option value="PTM">กฟอ.พธร.</option>
+            <option value="NKW">กฟย.นกว</option>
+           
+          </select>
         <label for="textinput">	คำค้นหา(ชื่อ,Pea.,ca,สายการจดหน่วย+เลข6หลัก):</label>
         <input type="text" name="keyword" id="keyword" value=""  />
         <input type="submit" value="ค้นหา" data-icon="search" />
