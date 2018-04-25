@@ -14,7 +14,7 @@
     $server = "us-cdbr-iron-east-05.cleardb.net";
     $username = "bde447b744111c";
     $password = "e35fa8d6";
-    $db = "heroku_58997c1013c3e1";
+    $db = "heroku_58997c1013c3e1a";
     $conn = new mysqli($server, $username, $password, $db);
     // Check connection
     if ($conn->connect_error) {
