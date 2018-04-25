@@ -31,7 +31,7 @@ if($office == "PTM"){
 $result = mysqli_query($conn,$sql_search);
 }	
 	}
-else if($office == "NKW")
+if($office == "NKW")
 {
 	require('./connect-db-nkw.php');
 	if($keyword){
