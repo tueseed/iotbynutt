@@ -57,7 +57,7 @@ $result = mysqli_query($conn,$sql_search);
 	</div>
     <div data-role="content">
       <form action="index.php" method="post">
-      	  <label for="selectmenu" class="select">Options:</label>
+      	  <label for="selectmenu" class="select">การไฟฟ้า:</label>
           <select name="office" id="office">
             <option value="PTM">กฟอ.พธร.</option>
             <option value="NKW">กฟย.นกว</option>
