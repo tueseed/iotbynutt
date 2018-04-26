@@ -6,7 +6,12 @@
 </head>
 
 <body>
+         <form action="test.php" method="get">
+         <input name="keyword" id="keyword" type="text" />
+         <input name="" type="submit" />
+         </form>
 <?php
+require('./connect-db.php');
 	$keyword = $_GET["keyword"];
 	$str2 = explode(" ",$keyword);
 	if($keyword){
@@ -20,9 +25,5 @@
 				echo $sql;
 			}
 		 ?>
-         <form action="index.php" method="get">
-         <input name="keyword" id="keyword" type="text" />
-         <input name="" type="submit" />
-         </form>
 </body>
 </html>
