@@ -47,6 +47,7 @@ if($office == "NKW")
 							$sql_search = "SELECT * FROM tbl_cs WHERE (cs_name LIKE '%".$keyword."%') OR (pea_no LIKE '%".$keyword."%') OR (ca LIKE '%".$keyword."%')";
 				}
 $result = mysqli_query($conn,$sql_search);
+$find_num = mysqli_num_rows($result);
 if($find_num == 0){$find_result = "ไม่พบข้อมูล";} else if($find_num > 0){$find_result = "ค้นพบ ".$find_num." รายการ";}
 }
 	
@@ -56,7 +57,7 @@ if($find_num == 0){$find_result = "ไม่พบข้อมูล";} else if(
 ?>
 <div data-role="page" id="page">
 	<div data-role="header">
-		<h1>PTM CS DATA</h1>
+		<h1>PTR Customer Data</h1>
 	</div>
     <div data-role="content">
       <form action="index.php" method="get">
