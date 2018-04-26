@@ -62,15 +62,18 @@ if($find_num == 0){$find_result = "ไม่พบข้อมูล";} else if(
 	</div>
 	<div data-role="content">	
 			<?php
+			$a = 1;
 			while($objectresult = mysqli_fetch_array($result)){
-            echo $objectresult["cs_name"]."<br>";
+            echo $a.".".$objectresult["cs_name"]."<br>";
 			echo $objectresult["address"]."<br>";
 			echo "ca :".$objectresult["ca"]."<br>";
 			echo "pea no.:".$objectresult["pea_no"]."<br>";
 			echo "สายการจำหน่วย :".$objectresult["route"]."<br>";
 			echo "เลข 6 หลัก :".$objectresult["sixdigit"]."<br>";
 			echo "<a href='https://www.google.co.th/maps/search/".$objectresult["lat"].",".$objectresult["long"]."'>พิกัด Google map</a></h5><br><br>";
+			$a = $a +1;
 			}
+			$a = 0;
 			?>
             <h2><a href="#" class="ui-btn" data-rel="back">กลับหน้าค้นหา</a></h2>
 	</div>
