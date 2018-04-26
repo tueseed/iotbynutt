@@ -22,8 +22,17 @@ require('./connect-db.php');
 						$sql .= " OR (ca LIKE '%".$k."%')";
 						$sql .= " OR (address LIKE '%".$k."%')";
 									}
-				echo $sql;
+				$result = mysqli_query($conn,$sql);
+				$a = 1 ;
+				while($objectresult = mysqli_fetch_array($result))
+				{
+					echo $a.".".$objectresult."<br>";
+					
+					$a = $a+1;
+					}			
+				$a = 0;
+				
 			}
-		 ?>
+			?>
 </body>
 </html>
