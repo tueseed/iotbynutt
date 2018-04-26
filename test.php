@@ -9,7 +9,7 @@
 <?php
 	$str1 ="สมคิด บ้านเลือก นะจ๊ะ";
 	$str2 = explode(" ",$str1);
-printr($str2);
+print_r($str2);
 
 
 		 ?>
