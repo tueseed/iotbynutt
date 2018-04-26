@@ -11,8 +11,8 @@
 <body> 
 <?php
 
-$keyword = $_POST['keyword'];
-$office = $_POST['office'];
+$keyword = $_GET['keyword'];
+$office = $_GET['office'];
 $route_check = substr($keyword,0,4);
 $route_S_up = strtoupper($route_check);
 //require('./connect-db.php');
@@ -56,7 +56,7 @@ $result = mysqli_query($conn,$sql_search);
 		<h1>PTM CS DATA</h1>
 	</div>
     <div data-role="content">
-      <form action="index.php" method="post">
+      <form action="index.php" method="get">
       	  <label for="selectmenu" class="select">การไฟฟ้า:</label>
           <select name="office" id="office">
             <option value="PTM">กฟอ.พธร.</option>
