@@ -29,6 +29,8 @@ if($office == "PTM"){
 							$sql_search = "SELECT * FROM tbl_cs WHERE (cs_name LIKE '%".$keyword."%') OR (pea_no LIKE '%".$keyword."%') OR (ca LIKE '%".$keyword."%')";
 				}
 $result = mysqli_query($conn,$sql_search);
+$find_num = mysqli_num_rows($result);
+if($find_num == 0){$find_result = "ไม่พบข้อมูล";} else if($find_num > 0){$find_result = "ค้นพบ ".$find_num." รายการ";}
 }	
 	}
 if($office == "NKW")
@@ -45,6 +47,7 @@ if($office == "NKW")
 							$sql_search = "SELECT * FROM tbl_cs WHERE (cs_name LIKE '%".$keyword."%') OR (pea_no LIKE '%".$keyword."%') OR (ca LIKE '%".$keyword."%')";
 				}
 $result = mysqli_query($conn,$sql_search);
+if($find_num == 0){$find_result = "ไม่พบข้อมูล";} else if($find_num > 0){$find_result = "ค้นพบ ".$find_num." รายการ";}
 }
 	
 	}
@@ -69,7 +72,8 @@ $result = mysqli_query($conn,$sql_search);
       	</form>
        
     </div>
-	<div data-role="content">	
+	<div data-role="content">
+    		<?php echo $find_result; ?>	
 		<ul data-role="listview">
 			<?php
 				$a = 1 ;
