@@ -17,10 +17,10 @@ require('./connect-db.php');
 	if($keyword){
 				$sql = "SELECT * FROM tbl_cs WHERE (cs_name LIKE '%".$keyword."%')";
 				foreach($str2 as $k){
-						$sql .= " OR (cs_name LIKE '%".$k."%')";
-						$sql .= " OR (pea_no LIKE '%".$k."%')";
-						$sql .= " OR (ca LIKE '%".$k."%')";
-						$sql .= " OR (address LIKE '%".$k."%')";
+						$sql .= " AND (cs_name LIKE '%".$k."%')";
+						$sql .= " AND (pea_no LIKE '%".$k."%')";
+						$sql .= " AND (ca LIKE '%".$k."%')";
+						$sql .= " AND (address LIKE '%".$k."%')";
 									}
 				$result = mysqli_query($conn,$sql);
 				$a = 1 ;
