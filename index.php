@@ -89,7 +89,7 @@ if($find_num == 0){$find_result = "ไม่พบข้อมูล";} else if(
 			?>
 		</ul>		
 	</div>
-    <div><?php echo "<h2><a href='csdetial1.php?keyword=".$keyword."&office=".$office."'>ดูทั้งหมด</a></h2>"; ?></div>
+    <?php echo "<h2><a href='csdetial1.php?keyword=".$keyword."&office=".$office."'>ดูทั้งหมด</a></h2>"; ?>
 	<div data-role="footer" data-theme="a">
 		<h4>Dev By Nutthapong</h4>
 	</div>
