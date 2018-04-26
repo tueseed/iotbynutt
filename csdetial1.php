@@ -8,7 +8,6 @@
 <script src="jquery-1.6.4.min.js" type="text/javascript"></script>
 <script src="jquery.mobile-1.0.min.js" type="text/javascript"></script>
 </head> 
-<body> 
 <?php
 
 $keyword = $_GET['keyword'];
@@ -55,42 +54,28 @@ if($find_num == 0){$find_result = "ไม่พบข้อมูล";} else if(
 
 
 ?>
+<body> 
+
 <div data-role="page" id="page">
 	<div data-role="header">
-		<h1>PTR Customer Data</h1>
+		<h1>รายละเอียดผู้ใช้ไฟฟ้า</h1>
 	</div>
-    <div data-role="content">
-      <form action="index.php" method="get">
-      	  <label for="selectmenu" class="select">การไฟฟ้า:</label>
-          <select name="office" id="office">
-            <option value="PTM">กฟอ.พธร.</option>
-            <option value="NKW">กฟย.นกว</option>
-           
-          </select>
-        <label for="textinput">	คำค้นหา(ชื่อ,Pea.,ca,สายการจดหน่วย+เลข6หลัก):</label>
-        <input type="text" name="keyword" id="keyword" value=""  />
-        <input type="submit" value="ค้นหา" data-icon="search" />
-      	</form>
-       
-    </div>
-    <div><?php echo $find_result; ?></div>
-	<div data-role="content">
-    			
-		<ul data-role="listview">
+	<div data-role="content">	
 			<?php
-				$a = 1 ;
-				while($objectresult = mysqli_fetch_array($result))
-				{
-					//echo "<li>".$objectresult["cs_name"]."</li>";
-					echo "<li><a href='csdetial.php?pea_no=".$objectresult["pea_no"]."&office=".$objectresult["office"]."'>".$a.".".$objectresult["cs_name"]."</a></li>";
-					$a = $a+1;
-					}			
-				$a = 0;
+			while($objectresult = mysqli_fetch_array($result)){
+            echo $objectresult["cs_name"]."<br>";
+			echo $objectresult["address"]."<br>";
+			echo "ca :".$objectresult["ca"]."<br>";
+			echo "pea no.:".$objectresult["pea_no"]."<br>";
+			echo "สายการจำหน่วย :".$objectresult["route"]."<br>";
+			echo "เลข 6 หลัก :".$objectresult["sixdigit"]."<br>";
+			echo "<a href='https://www.google.co.th/maps/search/".$objectresult["lat"].",".$objectresult["long"]."'>พิกัด Google map</a></h5><br>";
+			}
 			?>
-		</ul>		
+            <h2><a href="#" class="ui-btn" data-rel="back">กลับหน้าค้นหา</a></h2>
 	</div>
-    <div><?php echo "<h2><a href='csdetial1.php?keyword=".$keyword."&office=".$office."'>ดูทั้งหมด</a></h2>"; ?></div>
-	<div data-role="footer" data-theme="a">
+   
+	<div data-role="footer">
 		<h4>Dev By Nutthapong</h4>
 	</div>
 </div>
