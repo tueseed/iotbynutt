@@ -72,14 +72,14 @@ $result = mysqli_query($conn,$sql_search);
 	<div data-role="content">	
 		<ul data-role="listview">
 			<?php
-			
+				$a = 1 ;
 				while($objectresult = mysqli_fetch_array($result))
 				{
 					//echo "<li>".$objectresult["cs_name"]."</li>";
 					echo "<li><a href='csdetial.php?pea_no=".$objectresult["pea_no"]."&office=".$objectresult["office"]."'>".$objectresult["cs_name"]."</a></li>";
-					
+					$a = $a+1;
 					}			
-			
+				$a = 0;
 			?>
 		</ul>		
 	</div>
