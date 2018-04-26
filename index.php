@@ -72,8 +72,9 @@ if($find_num == 0){$find_result = "ไม่พบข้อมูล";} else if(
       	</form>
        
     </div>
+    <div><?php echo $find_result; ?></div>
 	<div data-role="content">
-    		<div><?php echo $find_result; ?></div>	
+    			
 		<ul data-role="listview">
 			<?php
 				$a = 1 ;
