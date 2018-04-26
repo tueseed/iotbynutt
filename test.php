@@ -26,7 +26,7 @@ require('./connect-db.php');
 				$a = 1 ;
 				while($objectresult = mysqli_fetch_array($result))
 				{
-					echo $a.".".$objectresult."<br>";
+					echo $a.".".$objectresult["cs_name"]." ".$objectresult["pea_no"]." ".$objectresult["address"]."<br>";
 					
 					$a = $a+1;
 					}			
