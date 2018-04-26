@@ -25,7 +25,7 @@ if($office == "PTM"){
 				
 										}
 			else{
-							$sql_search = "SELECT * FROM tbl_cs WHERE (cs_name LIKE '%".$keyword."%') OR (pea_no LIKE '%".$keyword."%') OR (ca LIKE '%".$keyword."%')";
+							$sql_search = "SELECT * FROM tbl_cs WHERE (cs_name LIKE '%".$keyword."%') OR (pea_no LIKE '%".$keyword."%') OR (ca LIKE '%".$keyword."%') OR (address LIKE '%".$keyword."%')";
 				}
 $result = mysqli_query($conn,$sql_search);
 $find_num = mysqli_num_rows($result);
@@ -43,7 +43,7 @@ if($office == "NKW")
 				
 										}
 			else{
-							$sql_search = "SELECT * FROM tbl_cs WHERE (cs_name LIKE '%".$keyword."%') OR (pea_no LIKE '%".$keyword."%') OR (ca LIKE '%".$keyword."%')";
+							$sql_search = "SELECT * FROM tbl_cs WHERE (cs_name LIKE '%".$keyword."%') OR (pea_no LIKE '%".$keyword."%') OR (ca LIKE '%".$keyword."%') OR (address LIKE '%".$keyword."%')";
 				}
 $result = mysqli_query($conn,$sql_search);
 $find_num = mysqli_num_rows($result);
