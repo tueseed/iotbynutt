@@ -60,9 +60,10 @@ if($find_num == 0){$find_result = "ไม่พบข้อมูล";} else if(
 	<div data-role="header">
 		<h1>รายละเอียดผู้ใช้ไฟฟ้า</h1>
 	</div>
-	<div data-role="content">	
+		
 			<?php
 			while($objectresult = mysqli_fetch_array($result)){
+			echo "<div data-role='content'>";
             echo $objectresult["cs_name"]."<br>";
 			echo $objectresult["address"]."<br>";
 			echo "ca :".$objectresult["ca"]."<br>";
@@ -71,7 +72,9 @@ if($find_num == 0){$find_result = "ไม่พบข้อมูล";} else if(
 			echo "เลข 6 หลัก :".$objectresult["sixdigit"]."<br>";
 			echo "<a href='https://www.google.co.th/maps/search/".$objectresult["lat"].",".$objectresult["long"]."'>พิกัด Google map</a></h5><br>";
 			}
+			echo "</div>";
 			?>
+    <div data-role='content'>
             <h2><a href="#" class="ui-btn" data-rel="back">กลับหน้าค้นหา</a></h2>
 	</div>
    
