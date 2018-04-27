@@ -55,7 +55,7 @@ if($find_num == 0){$find_result = "ไม่พบข้อมูล";} else if(
 /////////////////////////////////////////////////////////////////////////////
 if($office == "BPA")
 {
-	require('./connect-db-nkw.php');
+	require('./connect-db-bpa.php');
 	if($keyword){
 			if($route_S_up == "JBPA"){
 										$route_search = substr($keyword,0,7);
