@@ -17,6 +17,9 @@ require('./connect-db.php');
 if($office == "JNKW"){
 require('./connect-db-nkw.php');
 	}
+	if($office == "JBPA"){
+require('./connect-db-bpa.php');
+	}
 $sql_search = "SELECT * FROM tbl_cs WHERE (pea_no LIKE '%".$pea_no."%')";
 $result = mysqli_query($conn,$sql_search);
 ?>

@@ -32,6 +32,7 @@ $find_num = mysqli_num_rows($result);
 if($find_num == 0){$find_result = "ไม่พบข้อมูล";} else if($find_num > 0){$find_result = "ค้นพบ ".$find_num." รายการ";}
 }	
 	}
+///////////////////////////////////////////////////////////////////////////////
 if($office == "NKW")
 {
 	require('./connect-db-nkw.php');
@@ -51,8 +52,26 @@ if($find_num == 0){$find_result = "ไม่พบข้อมูล";} else if(
 }
 	
 	}
-
-
+/////////////////////////////////////////////////////////////////////////////
+if($office == "BPA")
+{
+	require('./connect-db-nkw.php');
+	if($keyword){
+			if($route_S_up == "JBPA"){
+										$route_search = substr($keyword,0,7);
+										$six_pole = substr($keyword,8,13);
+										$sql_search = "SELECT * FROM tbl_cs WHERE route LIKE '%".$route_search."%' AND sixdigit LIKE '%".$six_pole."%'";
+				
+										}
+			else{
+							$sql_search = "SELECT * FROM tbl_cs WHERE (cs_name LIKE '%".$keyword."%') OR (pea_no LIKE '%".$keyword."%') OR (ca LIKE '%".$keyword."%') OR (address LIKE '%".$keyword."%')";
+				}
+$result = mysqli_query($conn,$sql_search);
+$find_num = mysqli_num_rows($result);
+if($find_num == 0){$find_result = "ไม่พบข้อมูล";} else if($find_num > 0){$find_result = "ค้นพบ ".$find_num." รายการ";}
+}
+	
+	}
 ?>
 <body> 
 
