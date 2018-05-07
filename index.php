@@ -76,7 +76,7 @@ if($find_num == 0){$find_result = "ไม่พบข้อมูล";} else if(
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 if($office == "DNS")
 {
-	require('./connect-db-bpa.php');
+	require('./connect-db-dns.php');
 	if($keyword){
 			if($route_S_up == "JDNS"){
 										$route_search = substr($keyword,0,7);
