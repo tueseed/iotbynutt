@@ -84,7 +84,8 @@ if($find_num == 0){$find_result = "ไม่พบข้อมูล";} else if(
           <select name="office" id="office">
             <option value="PTM">กฟอ.พธร.</option>
             <option value="NKW">กฟย.นกว</option>
-           	<option value="BPA">กฟส.บางแพ</option>
+            <option value="BPA">กฟส.บางแพ</option>
+	     <option value="DNS">กฟส.ดำเนินสะดวก</option>
           </select>
         <label for="textinput">	คำค้นหา(ชื่อ,Pea.,ca,สายการจดหน่วย+เลข6หลัก):</label>
         <input type="text" name="keyword" id="keyword" value=""  />
