@@ -7,32 +7,37 @@ function send_cmd(msg)
 		useSSL: true,
 		userName: "test",
 		password: "12345",
-		onSuccess:onConnect(msg),
+		onSuccess:onConnect,
 		onFailure:doFail
 	}
 	client.connect(options);
-}
-function onConnect(msg) 
-{
-    // Once a connection has been made, make a subscription and send a message.
-    console.log("onConnect");
-    message = new Paho.MQTT.Message(msg);
+	message = new Paho.MQTT.Message(msg);
     message.destinationName = "/ESP/LED";
 	message.qos = 0;
 	message.retained = true;
     client.send(message);
-  }
-  function doFail(e){
+}
+function onConnect() 
+{
+    // Once a connection has been made, make a subscription and send a message.
+    console.log("onConnect");
+    
+ }
+function doFail(e){
     console.log(e);
   }
-  function onConnectionLost(responseObject) {
-    if (responseObject.errorCode !== 0) {
+function onConnectionLost(responseObject)
+ {
+    if (responseObject.errorCode !== 0) 
+	{
       console.log("onConnectionLost:"+responseObject.errorMessage);
     }
   }
-  function onMessageArrived(message) {
+function onMessageArrived(message) 
+{
     console.log("onMessageArrived:"+message.payloadString);
   }
+
 function onoff(room_num)
 {
 	var x = document.getElementById("room" + room_num).checked;
