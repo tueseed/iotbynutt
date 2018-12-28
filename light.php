@@ -15,6 +15,8 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+		<script src="control.js"></script>
 		<style type="text/css">
 			.material-switch > input[type="checkbox"] 
 			{
@@ -72,22 +74,22 @@
 				<div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
 					<div class="panel panel-default">
 						<!-- Default panel contents -->
-						<div class="panel-heading">Material Design Switch Demos</div>
+						<div class="panel-heading">SMART LIGHT BY TUE</div>
 					
 						<!-- List group -->
 						<ul class="list-group">
 							<li class="list-group-item">
 								ไฟห้องทำงาน
 								<div class="mt-4 material-switch pull-right">
-									<input id="workroom" name="workroom" type="checkbox"/>
-									<label for="workroom" class="label-success"></label>
+									<input id="room1" name="room1" type="checkbox" onchange="onoff('1')"/>
+									<label for="room1" class="label-success"></label>
 								</div>
 							</li>
 							<li class="list-group-item">
 								ไฟห้องรับแขก
 								<div class="mt-4 material-switch pull-right">
-									<input id="guestroom" name="guestroom" type="checkbox"/>
-									<label for="guestroom" class="label-success"></label>
+									<input id="room2" name="room2" type="checkbox" onchange="onoff('2')"/>
+									<label for="room2" class="label-success"></label>
 								</div>
 							</li>
 							
