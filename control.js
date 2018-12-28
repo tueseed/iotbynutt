@@ -11,11 +11,15 @@ function send_cmd(msg)
 		onFailure:doFail
 	}
 	client.connect(options);
-	message = new Paho.MQTT.Message(msg);
-    message.destinationName = "/ESP/LED";
-	message.qos = 0;
-	message.retained = true;
-    client.send(message);
+	setTimeout(function()
+	{
+		message = new Paho.MQTT.Message(msg);
+		message.destinationName = "/ESP/LED";
+		message.qos = 0;
+		message.retained = true;
+		client.send(message);
+   },5000);
+	
 }
 function onConnect() 
 {
