@@ -1,4 +1,4 @@
-function send_cmd()
+function send_cmd(msg)
 {
 	client = new Paho.MQTT.Client("m12.cloudmqtt.com", 39053,"web_" + parseInt(Math.random() * 100, 10));
 	client.onConnectionLost = onConnectionLost;
@@ -7,19 +7,19 @@ function send_cmd()
 		useSSL: true,
 		userName: "test",
 		password: "12345",
-		onSuccess:onConnect,
+		onSuccess:onConnect(msg),
 		onFailure:doFail
 	}
 	client.connect(options);
 }
-function onConnect() 
+function onConnect(msg) 
 {
     // Once a connection has been made, make a subscription and send a message.
     console.log("onConnect");
-    //client.subscribe("/cloudmqtt");
-    //message = new Paho.MQTT.Message("Hello CloudMQTT");
-    //message.destinationName = "/cloudmqtt";
-    //client.send(message);
+    client.subscribe("/ESP/LED");
+    message = new Paho.MQTT.Message(msg);
+    message.destinationName = "/ESP/LED";
+    client.send(message);
   }
   function doFail(e){
     console.log(e);
@@ -38,10 +38,11 @@ function onoff(room_num)
 	if(x == true)
 	{
 	alert('เปิดไฟห้อง' + room_num);
-	send_cmd();
+	send_cmd("ON");
 	}
 	else if (x == false)
 	{
 		alert('ปิดไฟห้อง' + room_num);
+		send_cmd("OFF");
 	}
 }
