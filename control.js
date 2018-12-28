@@ -38,6 +38,7 @@ function onoff(room_num)
 	if(x == true)
 	{
 	alert('เปิดไฟห้อง' + room_num);
+	send_cmd();
 	}
 	else if (x == false)
 	{
