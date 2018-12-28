@@ -143,11 +143,11 @@
 	</head>
 	<body>
 		<div class="container" >
-			<div class=" mt-2 row row-center" >
-				<div class="col-sm-10">
+			<div class=" mt-2 row" >
+				<div class="col-lg-10">
 					<h3>ห้องทำงาน</h3>
 				</div>
-				<div class="col-sm-2">
+				<div class="col-lg-2">
 					<label class="switch">
 					<input type="checkbox" id="L001" onchange="">
 					<span class="slider round"></span>
