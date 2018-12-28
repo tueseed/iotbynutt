@@ -16,145 +16,112 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<style type="text/css">
-			.row-center
+			.material-switch > input[type="checkbox"] 
 			{
-				text-align:center;
+				display: none;   
 			}
-			body 
+			.material-switch > label 
 			{
-				font-family: 'Kanit', sans-serif;
+				cursor: pointer;
+				height: 0px;
+				position: relative; 
+				width: 40px;  
 			}
-			iframe 
+			.material-switch > label::before 
 			{
-				width: 100%;
-				height: 100%;
+				background: rgb(0, 0, 0);
+				box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+				border-radius: 8px;
+				content: '';
+				height: 16px;
+				margin-top: -8px;
+				position:absolute;
+				opacity: 0.3;
+				transition: all 0.4s ease-in-out;
+				width: 40px;
 			}
-			.table-group 
+			.material-switch > label::after 
 			{
-				display: block;
-				max-height: 200px;
-				overflow-y: auto;
-				-ms-overflow-style: -ms-autohiding-scrollbar;
-			}
-			.switch 
-			{
-				position: relative;
-				display: inline-block;
-				width: 60px;
-				height: 34px;
-			}
-			.switch input 
-			{ 
-				opacity: 0;
-				width: 0;
-				height: 0;
-			}
-			.slider 
-			{
-			  position: absolute;
-			  cursor: pointer;
-			  top: 0;
-			  left: 0;
-			  right: 0;
-			  bottom: 0;
-			  background-color: #ccc;
-			  -webkit-transition: .4s;
-			  transition: .4s;
-			}
-			.slider:before
-			{
-			  position: absolute;
-			  content: "";
-			  height: 26px;
-			  width: 26px;
-			  left: 4px;
-			  bottom: 4px;
-			  background-color: white;
-			  -webkit-transition: .4s;
-			  transition: .4s;
-			}
-			input:checked + .slider 
-			{
-				background-color: #2196F3;
-			}
-			input:focus + .slider 
-			{
-				box-shadow: 0 0 1px #2196F3;
-			}
-			input:checked + .slider:before 
-			{
-				-webkit-transform: translateX(26px);
-				-ms-transform: translateX(26px);
-				transform: translateX(26px);
-			}
-			/* Rounded sliders */
-			.slider.round 
-			{
-			  border-radius: 34px;
-			}
-			.slider.round:before 
-			{
-			  border-radius: 50%;
-			}
-			.sidenav 
-			{
-				height: 100%;
-				width: 0;
-				position: fixed;
-				z-index: 1;
-				top: 0;
-				left: 0;
-				background-color: #111;
-				overflow-x: hidden;
-				transition: 0.5s;
-				padding-top: 60px;
-			}
-
-			.sidenav a 
-			{
-				padding: 8px 8px 8px 32px;
-				text-decoration: none;
-				font-size: 25px;
-				color: #818181;
-				display: block;
-				transition: 0.3s;
-			}
-
-			.sidenav a:hover 
-			{
-				color: #f1f1f1;
-			}
-
-			.sidenav .closebtn 
-			{
+				background: rgb(255, 255, 255);
+				border-radius: 16px;
+				box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+				content: '';
+				height: 24px;
+				left: -4px;
+				margin-top: -8px;
 				position: absolute;
-				top: 0;
-				right: 25px;
-				font-size: 36px;
-				margin-left: 50px;
+				top: -4px;
+				transition: all 0.3s ease-in-out;
+				width: 24px;
 			}
-
-			@media screen and (max-height: 450px) 
+			.material-switch > input[type="checkbox"]:checked + label::before 
 			{
-			  .sidenav {padding-top: 15px;}
-			  .sidenav a {font-size: 18px;}
+				background: inherit;
+				opacity: 0.5;
+			}
+			.material-switch > input[type="checkbox"]:checked + label::after 
+			{
+				background: inherit;
+				left: 20px;
 			}
 		</style>
 	</head>
 	<body>
-		<div class="container" >
-			<div class=" mt-2 row" >
-				<div class="col-lg-10">
-					<h3>ห้องทำงาน</h3>
-				</div>
-				<div class="col-lg-2">
-					<label class="switch">
-					<input type="checkbox" id="L001" onchange="">
-					<span class="slider round"></span>
-				</label>
-				</div>
-				
-			</div>
-		</div>
+		<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Material Design Switch Demos</div>
+            
+                <!-- List group -->
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Bootstrap Switch Default
+                        <div class="material-switch pull-right">
+                            <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
+                            <label for="someSwitchOptionDefault" class="label-default"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        Bootstrap Switch Primary
+                        <div class="material-switch pull-right">
+                            <input id="someSwitchOptionPrimary" name="someSwitchOption001" type="checkbox"/>
+                            <label for="someSwitchOptionPrimary" class="label-primary"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        Bootstrap Switch Success
+                        <div class="material-switch pull-right">
+                            <input id="someSwitchOptionSuccess" name="someSwitchOption001" type="checkbox"/>
+                            <label for="someSwitchOptionSuccess" class="label-success"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        Bootstrap Switch Info
+                        <div class="material-switch pull-right">
+                            <input id="someSwitchOptionInfo" name="someSwitchOption001" type="checkbox"/>
+                            <label for="someSwitchOptionInfo" class="label-info"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        Bootstrap Switch Warning
+                        <div class="material-switch pull-right">
+                            <input id="someSwitchOptionWarning" name="someSwitchOption001" type="checkbox"/>
+                            <label for="someSwitchOptionWarning" class="label-warning"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        Bootstrap Switch Danger
+                        <div class="material-switch pull-right">
+                            <input id="someSwitchOptionDanger" name="someSwitchOption001" type="checkbox"/>
+                            <label for="someSwitchOptionDanger" class="label-danger"></label>
+                        </div>
+                    </li>
+                </ul>
+            </div>            
+        </div>
+    </div>
+</div>
 	</body>
 </html>
