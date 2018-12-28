@@ -143,11 +143,17 @@
 	</head>
 	<body>
 		<div class="container-fluid" >
-			<div class="row row-center" >
-				<label class="switch">
-					<input type="checkbox" value="ไฟห้องทำงาน"  id="L001" onchange="">
+			<div class=" mt-5 row row-center" >
+				<div class="col-sm-10">
+					<h3>ห้องทำงาน</h3>
+				</div>
+				<div class="col-sm-2">
+					<label class="switch">
+					<input type="checkbox" id="L001" onchange="">
 					<span class="slider round"></span>
 				</label>
+				</div>
+				
 			</div>
 		</div>
 	</body>
