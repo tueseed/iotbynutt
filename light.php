@@ -72,7 +72,7 @@
 		<div class="mt-4 container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
-					<div class="panel panel-default">
+					<div class="panel panel-success">
 						<!-- Default panel contents -->
 						<div class="panel-heading">SMART LIGHT BY TUE</div>
 					
