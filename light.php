@@ -78,7 +78,7 @@
                 <ul class="list-group">
                     <li class="list-group-item">
                         Bootstrap Switch Default
-                        <div class="material-switch pull-right">
+                        <div class="mt-2 material-switch pull-right">
                             <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
                             <label for="someSwitchOptionDefault" class="label-default"></label>
                         </div>
