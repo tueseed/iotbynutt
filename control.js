@@ -1,6 +1,6 @@
 function send_cmd()
 {
-	client = new Paho.MQTT.Client("m12.cloudmqtt.com", 19053,"web_" + parseInt(Math.random() * 100, 10));
+	client = new Paho.MQTT.Client("m12.cloudmqtt.com", 39053,"web_" + parseInt(Math.random() * 100, 10));
 	client.onConnectionLost = onConnectionLost;
 	client.onMessageArrived = onMessageArrived;
 	var options = {
