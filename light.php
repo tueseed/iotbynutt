@@ -142,8 +142,8 @@
 		</style>
 	</head>
 	<body>
-		<div class="container-fluid" >
-			<div class=" mt-5 row row-center" >
+		<div class="container" >
+			<div class=" mt-2 row row-center" >
 				<div class="col-sm-10">
 					<h3>ห้องทำงาน</h3>
 				</div>
