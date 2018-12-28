@@ -17,7 +17,7 @@ function onConnect(msg)
     // Once a connection has been made, make a subscription and send a message.
     console.log("onConnect");
     //client.subscribe("/ESP/LED");
-    message = new Paho.MQTT.Message(msg);
+    message = new Paho.Message(msg);
     message.destinationName = "/ESP/LED";
     client.send(message);
   }
