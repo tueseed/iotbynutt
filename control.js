@@ -38,11 +38,11 @@ function onoff(room_num)
 	if(x == true)
 	{
 	alert('เปิดไฟห้อง' + room_num);
-	send_cmd("ON");
+	send_cmd('ON');
 	}
 	else if (x == false)
 	{
 		alert('ปิดไฟห้อง' + room_num);
-		send_cmd("OFF");
+		send_cmd('OFF');
 	}
 }
