@@ -9,8 +9,8 @@ if (!$mqtt->connect(true, NULL, $username, $password))
 {
 	exit(1);
 }
-/*
-$topics['ESP/ST1'] = array("qos" => 0,"function" => "procmsg");
+
+$topics['ESP/ST1'] = array("qos" => 0,"function" => "procmsg");/*
 $mqtt->subscribe($topics,0);
 while($mqtt->proc()) {}
 $mqtt->close();
