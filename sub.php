@@ -2,7 +2,7 @@
 require_once('phpMQTT.php');
 
 $url = parse_url(getenv('m12.cloudmqtt.com'));
-$topic = substr($url['/ESP/ST1'], 1);
+$topic =  '/ESP/ST1';
 $username = "test";                   
 $password = "12345"; 
 $client_id = "phpMQTT-subscriber";
