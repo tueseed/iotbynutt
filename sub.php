@@ -1,5 +1,5 @@
 <?php
-require('phpMQTT.php');
+//require('phpMQTT.php');
 //$topic =  '/ESP/ST1';
 $username = "test";                   
 $password = "12345"; 
