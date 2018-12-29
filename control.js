@@ -48,11 +48,31 @@ function onoff(room_num)
 	if(x == true)
 	{
 	alert('เปิดไฟห้อง' + room_num);
-	send_cmd('ON');
+	pub_cmd('ON');
 	}
 	else if (x == false)
 	{
 		alert('ปิดไฟห้อง' + room_num);
-		send_cmd('OFF');
+		pub_cmd('OFF');
 	}
+}
+function pub_cmd(cmd)
+{
+	var formData = new FormData();
+		formData.append('cmd', cmd);
+		$.ajax({
+			url: 'pub_cmd.php',
+			method: 'POST',
+			data: formData,
+			async: true,
+			cache: false,
+			processData: false,
+			contentType: false,
+			success: function(response) {
+                        alert(response);
+                    },
+                    complete: function() {
+                        location.reload();
+                    }				
+			});
 }
