@@ -1,8 +1,6 @@
 <?php
 require_once('phpMQTT.php');
-
-$url = parse_url(getenv('m12.cloudmqtt.com'));
-$topic =  '/ESP/ST1';
+//$topic =  '/ESP/ST1';
 $username = "test";                   
 $password = "12345"; 
 $client_id = "phpMQTT-subscriber";
@@ -14,7 +12,7 @@ function procmsg($topic, $msg){
 $mqtt = new Bluerhinos\phpMQTT('m12.cloudmqtt.com', '19053', $client_id);
 if ($mqtt->connect(true, NULL, $username, $password)) {
 	
-  $topics[$topic] = array(
+  $topics['/ESP/ST1'] = array(
       "qos" => 0,
       "function" => "procmsg"
   );
