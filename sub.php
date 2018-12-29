@@ -1,11 +1,11 @@
 <?php
-//require('phpMQTT.php');
+require('phpMQTT.php');
 //$topic =  '/ESP/ST1';
 $username = "test";                   
 $password = "12345"; 
 $client_id = "phpMQTT-subscriber";    
 $mqtt = new Bluerhinos\phpMQTT('m12.cloudmqtt.com', '19053', $client_id);
-$mqtt->connect(true, NULL, $username, $password)
+$mqtt->connect(true, NULL, $username, $password);
 if (!$mqtt->connect(true, NULL, $username, $password)) 
 {
 	exit(1);
